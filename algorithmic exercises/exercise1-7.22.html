@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS算法练习一：数组去重</title>
+</head>
+
+<body>
+  <div>7-22 算法练习 把传入的数组中的数字或者内容去重</div>
+
+
+</body>
+<script>
+  var arr=[1,2,3,2,1,42,3,21,421,324,123,14,32,123]
+
+
+  //去重方法一
+  function passRepeat(arr) {
+    var newarr=[]
+    for(var i=0;i< arr.length;i++) {
+      if(newarr.indexOf(arr[i])==-1){
+        newarr.push(arr[i])
+      }
+    }
+    return newarr
+  }
+  console.log(passRepeat(arr));
+
+
+// 去重方法二
+  function passRepeat2(arr) {
+    arr=arr.sort()
+    var newarr=[arr[0]]
+    for(var i=0;i<arr.length;i++){
+      if(arr[i]!==newarr[newarr.length-1]){
+        newarr.push(arr[i])
+      }
+    }
+    return newarr
+  }
+  console.log(passRepeat2(arr));
+
+
+</script>
+
+</html>
