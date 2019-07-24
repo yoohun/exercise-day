@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS算法练习四：输入一段英文，找出最长的单词</title>
+</head>
+<body>
+
+</body>
+<script>
+
+  //方法一：
+  function findLongest(str) {
+    var arr=str.split(' ')
+    var maxlength=0
+    for(var i=0;i<arr.length;i++){
+      if(arr[i].length > maxlength){
+        maxlength=arr[i].length
+      }
+    }
+    return maxlength
+  }
+
+
+  //方法二：
+  function findLongest2(str) {
+    var arr=str.split(' ')
+    var lengtharr=[]
+    for (var i = 0; i < arr.length; i++) {
+      console.log(arr[i].length);
+      lengtharr.push(arr[i].length)
+    }
+    console.log(lengtharr);
+    return lengtharr.sort(function (a, b) {
+      return b - a
+    })[0]
+  }
+
+  console.log(findLongest2("I'm a sdf asfe dkfnwjen askldna"));
+
+
+</script>
+</html>
