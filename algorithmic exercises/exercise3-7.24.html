@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS算法练习四：判断字符串是否是回文（正念，反念都一样）忽略大小写</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+
+  //方法一：
+  function huiwen(str) {
+    // var newStr
+    // if(typeof str=='string'){
+    //    newStr = str.toLowerCase().split('').reverse().join('')
+
+    // } else {
+    //   newStr = String(str).split('').reverse().join('')
+    // }
+    // if(newStr==str){
+    //   return true
+    // } else {
+    //   return false
+    // }
+    str = str.toLowerCase()
+    var newStr= str.split('').reverse().join('')
+    if(newStr==str){
+      return true
+    } else {
+       return false
+    }
+  }
+
+  //方法二：
+  function huiwen2(str) {
+    str = str.toLowerCase()
+    var length = str.length
+    for(var i=0;i<length/2;i++){
+      if(str[i]!==str[length-1-i]) {
+        return false
+      }
+    }
+    return true
+  }
+
+  //方法三：
+  function huiwen3(str) {
+    str = str.toLowerCase()
+    var arr=str.split('')
+    for(var i=0;i<arr.length/2;i++){
+      if(arr[i]!==arr[arr.length-1-i]){
+        return false
+      }
+    }
+    return true
+  }
+    console.log(huiwen('asdgsddsgdsa'));
+    console.log(huiwen('asdasd'));
+    console.log(huiwen('Asdgsddsgdsa'));
+    console.log(huiwen('asdgsdbvdsgdsa'));
+    console.log(huiwen('我我啊是发'));
+    console.log(huiwen('我我啊发是发啊我我'));
+    console.log(huiwen('sgfuywgiefhqiagwdyugsd'));
+
+</script>
+</html>
