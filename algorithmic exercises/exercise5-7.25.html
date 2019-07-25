@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS算法练习题五：找出数组中最大的差值</title>
+</head>
+<body>
+
+</body>
+<script>
+  var arr=[1,1231241,3,4,3423,6,7,8,9,99]
+  function maxDifference(arr) {
+    var difference=0
+    for(var i=0;i<arr.length;i++){
+      for(var j=0;j<arr.length;j++){
+        if (difference < Math.abs(arr[i] - arr[j])) {
+          difference = Math.abs(arr[i] - arr[j])
+        }
+      }
+    }
+    return difference
+  }
+
+
+//方法二：
+  function maxDifference2(arr) {
+    arr.sort(function (a,b) {
+      return a-b
+    })
+
+    var difference = arr[arr.length-1]-arr[0]
+    return difference
+  }
+
+  //方法三：
+  function maxDifference3(arr) {
+    var maxnum=arr[0]
+    var minnum=arr[0]
+    for(var i=0;i<arr.length;i++){
+      if(arr[i]>maxnum){
+        maxnum=arr[i]
+      }
+      if(arr[i]<minnum){
+        minnum = arr[i]
+      }
+    }
+    return Math.abs(maxnum - minnum)
+  }
+
+
+  console.log(maxDifference(arr));
+  console.log(maxDifference2(arr));
+  console.log(maxDifference3(arr));
+
+</script>
+</html>
