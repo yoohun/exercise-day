@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS算法练习六：string 里的每个单词首字母大写</title>
+</head>
+<body>
+
+</body>
+<script>
+  //方法一：
+
+  function capitalization(str) {
+    return str.toLowerCase().split(' ').map((item)=>{
+      return item.replace(item.charAt(0), item[0].toUpperCase())
+    }).join(' ')
+
+  }
+
+
+//方法二：
+  // function capitalization2(str) {
+  //     return str.toLowerCase().split(' ').map((item) => {
+  //       return item.substr(0,1).toUpperCase()+item.substr(1)
+  //     }).join(' ')
+
+  //   }
+
+
+
+// 方法三：
+  function capitalization3(str) {
+    var arr= str.toLowerCase().split(' ')
+    for ( var i=0;i<arr.length;i++){
+      //  arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substr(1)
+      // arr[i] = arr[i].substr(0,1).toUpperCase() + arr[i].substr(1)
+      arr[i] = arr[i][0].toUpperCase()+arr[i].substr(1)
+      console.log(arr[i][0]);
+
+    }
+    return arr.join(' ')
+
+  }
+
+  console.log(capitalization('title case a sentence'));
+  console.log(capitalization3('title case a sentence'));
+
+</script>
+</html>
