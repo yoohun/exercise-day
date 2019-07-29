@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS算法练习：判断输入的数字是不是质数</title>
+</head>
+<body>
+
+</body>
+
+<script>
+  function prime(num) {
+    for(var i=2;i<num;i++){
+      if(num%i==0){
+        return false
+      }
+    }
+    return true
+  }
+
+  console.log(prime(89));
+  console.log(prime(83));
+  console.log(prime(79));
+  console.log(prime(11));
+  console.log(prime(88));
+
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS算法练习：自动求和（从1到num的和）</title>
+</head>
+<body>
+
+</body>
+<script>
+
+  //方法一：
+  function add(num) {
+    var sum=0
+    for(var i=1;i<num+1;i++){
+      sum = i + sum
+    }
+    return sum
+  }
+
+
+  //方法二：
+  function add2(num) {
+    if(num==1){
+      return 1
+    } else {
+      return num + arguments.callee(num-1)
+      // return num + add2(num - 1)
+    }
+  }
+
+  //方法二：
+  function add3(n) {
+    return n * 1 + n*(n-1)/2*1
+  }
+
+  console.log(add(5));
+  console.log(add2(5));
+  console.log(add3(5));
+
+
+  console.log(add(25));
+  console.log(add2(25));
+  console.log(add3(25));
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS算法练习：用户输入一个数，输出该数字的因数的个数</title>
+</head>
+<body>
+
+</body>
+<script>
+  function factor(num) {
+    var arr=[]
+    for(var i=1;i<num+1;i++){
+      if(num%i==0){
+        arr.push(i)
+      }
+    }
+    return arr+'-----'+arr.length
+  }
+
+
+  function factor2(num) {
+    var length = 0
+    for(var i = 1;i<num+1;i++){
+      if(num%i==0){
+        ++length
+      }
+    }
+    return length
+  }
+
+
+  console.log(factor(16));
+  console.log(factor(78));
+
+  console.log(factor2(16));
+  console.log(factor2(78));
+
+
+</script>
+</html>

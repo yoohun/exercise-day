@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS算法练习：某个数字在数组中出现的次数</title>
+</head>
+<body>
+
+</body>
+
+<script>
+  function appearNum(arr,num) {
+    var times = 0
+    for(var i=0;i<arr.length;i++){
+      if(arr[i]==num){
+        times++
+      }
+    }
+    return times
+  }
+
+
+  console.log(appearNum([1, 234, 234, 1, 432, 532, 11, 4231, 1532, 1, 252, 236, 1, 12], 1));
+
+
+
+</script>
+</html>
