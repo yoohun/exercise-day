@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS算法练习：重复字符串指定次数</title>
+</head>
+<body>
+
+</body>
+<script>
+  function repeatString(str,num) {
+    var newStr = str
+    for(var i=0;i<num-1;i++){
+      str= str +' '+ newStr
+      console.log(i);
+
+    }
+    return str
+  }
+  console.log(repeatString('aaa', 4));
+
+</script>
+</html>

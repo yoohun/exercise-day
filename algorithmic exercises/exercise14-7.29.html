@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS算法练习：输出九九乘法表</title>
+  <style>
+    #one{
+      background: green;
+      height: 400px;
+      color: black
+    }
+    #two{
+      background: yellow;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div id="one"></div>
+  <div id='two'></div>
+</body>
+<script>
+  var divEle=document.getElementById('one')
+  for(var i=1;i<10;i++){
+    for(var j=1;j<10;j++){
+        divEle.innerHTML += i + '*' + j + '=' + i * j + '&nbsp;&nbsp;&nbsp;&nbsp;'
+    }
+    divEle.innerHTML = divEle.innerHTML + '<br />'
+  }
+
+
+
+  var divEle2=document.getElementById('two')
+  for(var i=1;i<10;i++){
+    for(var j=1;j<i+1;j++){
+        divEle2.innerHTML += i + '*' + j + '=' + i * j + '&nbsp;&nbsp;&nbsp;&nbsp;'
+    }
+    divEle2.innerHTML = divEle2.innerHTML + '<br />'
+  }
+
+
+
+</script>
+</html>
