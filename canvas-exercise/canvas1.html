@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CANVAS基础知识点</title>
+  <style>
+    #div1{
+      border: 1px solid red;
+      height: 1000px;
+      width: 100%;
+      margin: auto
+    }
+    #canvasDiv{
+      border: 1px solid;
+      margin: auto
+    }
+  </style>
+</head>
+<body>
+  <div id='div1'>
+    <canvas id='canvasDiv' width="900px" height="900px"></canvas>
+  </div>
+</body>
+<script>
+  var canvasDiv = document.getElementById('canvasDiv')
+  var ctx = canvasDiv.getContext("2d")
+  // ctx.fillStyle='red'
+  // ctx.fillRect(0,0,100,100)
+
+  // ctx.fillStyle='green'
+  // ctx.strokeStyle='pink'
+  // ctx.lineWidth=10
+  // ctx.strokeRect(100,100,50,50)
+  // ctx.fillRect(200,200,50,50)
+  // ctx.clearRect(200,200,50,50)
+
+
+  // ctx.beginPath()  //开始绘制路径
+  // ctx.lineWidth=5;
+  // ctx.moveTo(100,200)
+  // ctx.lineTo(100,500)
+
+  //   ctx.lineCap = 'round'
+  // ctx.closePath()
+  // ctx.strokeStyle='blue'
+  // ctx.stroke()
+
+  // ctx.beginPath()  //开始绘制路径
+  // ctx.lineWidth=5;
+  // ctx.moveTo(200,200)
+  // ctx.lineTo(200,500)
+  // ctx.lineTo(300,200)
+  // ctx.strokeStyle='red'
+  // ctx.lineCap='round'
+  // ctx.miterLimit=2
+  // // ctx.lineCap='square'
+  // ctx.closePath()
+  // ctx.stroke()
+
+
+  // ctx.beginPath()  //开始绘制路径
+  // ctx.lineWidth=5;
+  // ctx.moveTo(400,200)
+  // ctx.lineTo(400,500)
+  // ctx.lineTo(450,200)
+  // ctx.strokeStyle='yellow'
+  // ctx.lineCap='round'
+  // ctx.lineJoin='miter'
+  // ctx.miterLimit=100
+  // ctx.closePath()
+  // ctx.stroke()
+
+  // ctx.strokeStyle='purple'
+  // ctx.rect(50, 20, 200, 120)
+  // ctx.stroke()    //绘制紫色边框的矩形
+  // ctx.clip()
+  // ctx.fillStyle='black'
+  // ctx.fillRect(0, 0, 150, 100) //绘制矩形
+
+
+  ctx.beginPath()
+  ctx.moveTo(20, 20)
+  ctx.quadraticCurveTo(100,90,400,20)
+  ctx.stroke();
+
+  ctx.beginPath()
+  ctx.moveTo(100,100)
+  ctx.bezierCurveTo(120,200,180,200,240,100)
+  // ctx.closePath()
+  ctx.stroke()
+
+
+  ctx.beginPath()
+  ctx.moveTo(200,200)
+  // ctx.arc(200,200,30,0,2*Math.PI)
+  // ctx.arc(300,300,50,0,0.5*Math.PI)
+  // ctx.arc(600,600,100,0,1*Math.PI)
+  ctx.arc(300,300,50,0,1.5*Math.PI)
+  ctx.stroke()
+
+
+
+  // ctx.beginPath()
+  // ctx.moveTo(100,100)
+  // ctx.lineTo(250,100)
+  // ctx.stroke()
+  // ctx.beginPath()
+  // ctx.moveTo(300,300)
+  // ctx.lineTo(300,150)
+  // ctx.stroke()
+  // ctx.beginPath()
+  // ctx.arcTo(250,100,300,150,50)
+  // ctx.stroke()
+
+
+
+  ctx.beginPath()
+  ctx.moveTo(100,100)
+  ctx.lineTo(200,100)
+  ctx.arcTo(250,100,250,150,50)
+  ctx.lineTo(250,200)
+  ctx.stroke()
+
+
+
+  ctx.beginPath()
+  ctx.moveTo(20, 20)
+  ctx.lineTo(100,20)
+  ctx.arcTo(150,20,150,70,50)
+  ctx.lineTo(150,120)
+  ctx.stroke()
+  console.log(ctx.isPointInPath(150,120));
+  console.log(ctx.isPointInPath(0,0));
+
+
+  // ctx.beginPath()
+  // ctx.moveTo(300,500)
+  // ctx.lineTo(300,660)
+  // ctx.stroke()
+  // ctx.font='40px 微软雅黑'
+  // ctx.textAlign='left'
+  // ctx.fillText('textalign=left',300,510)
+  // ctx.textAlign='end'
+  // ctx.fillText('textalign=end',300,540)
+  // ctx.textAlign='start'
+  // ctx.fillText('textalign=start',300,580)
+  // ctx.textAlign='right'
+  // ctx.fillText('textalign=right',300,620)
+  // ctx.textAlign = 'center'
+  // ctx.fillText('textalign=center', 300, 660)
+
+
+
+  // ctx.beginPath()
+  // ctx.moveTo(100,500)
+  // ctx.lineTo(800,500)
+  // ctx.strokeStyle='red'
+  // ctx.stroke()
+  // ctx.font='20px 微软雅黑'
+  // ctx.textBaseline='alphabetic'
+  // ctx.fillText('textBaseline=alphabetic',20,500)
+  // ctx.textBaseline='top'
+  // ctx.fillText('textBaseline=top',100,500)
+  // ctx.textBaseline='hanging'
+  // ctx.fillText('textBaseline=hanging',300,500)
+  // ctx.textBaseline='middle'
+  // ctx.fillText('textBaseline=middle',400,500)
+  // ctx.textBaseline='ideographic'
+  // ctx.fillText('textBaseline=ideographic',650,500)
+  // ctx.textBaseline='bottom'
+  // ctx.fillText('textBaseline=bottom',800,500)
+
+
+
+  ctx.font='40px 微软雅黑'
+  ctx.strokeStyle='blue'
+  ctx.fillStyle='red'
+  ctx.strokeText('吴世勋',100,400)
+  ctx.fillText('吴世勋',100,400)
+  console.log(ctx.measureText('吴世勋asasdas').width);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
