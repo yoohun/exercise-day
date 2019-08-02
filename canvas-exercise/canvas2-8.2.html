@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>camvas练习一：canvas绘制奥运五环</title>
+  <style>
+    #five{
+      border: 1px solid red;
+      height: 400px;
+      width: 100%
+    }
+  </style>
+</head>
+<body>
+  <div id='five'>
+    <canvas id='circle' width='500' height="500"></canvas>
+  </div>
+</body>
+<script>
+  var five = document.getElementById('five')
+  var circle = document.getElementById('circle')
+  var ctx=circle.getContext('2d')
+  ctx.beginPath()
+  ctx.lineWidth=6
+  ctx.strokeStyle='blue'
+  ctx.arc(100,100,50,0,2*Math.PI)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.strokeStyle='black'
+  ctx.arc(220,100,50,0,2*Math.PI)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.strokeStyle='red'
+  ctx.arc(340,100,50,0,2*Math.PI)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.strokeStyle='yellow'
+  ctx.arc(155,150,50,0,2*Math.PI)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.strokeStyle='green'
+  ctx.arc(280,150,50,0,2*Math.PI)
+  ctx.stroke()
+
+  ctx.beginPath()
+  ctx.arc(100, 100, 50, 1.5 * Math.PI, 2.4 * Math.PI)
+  ctx.strokeStyle='blue'
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.arc(220, 100, 50, 1.5*Math.PI, 2.8 * Math.PI)
+  ctx.strokeStyle='black'
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.strokeStyle='red'
+  ctx.arc(340,100,50,0,0.6*Math.PI)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.strokeStyle='green'
+  ctx.arc(280,150,50,0.5*Math.PI,1.2*Math.PI)
+  ctx.stroke()
+</script>
+</html>

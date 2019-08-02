@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>canvas练习二：文字练习</title>
+  <style>
+    #canvas1{
+      border: 1px solid red
+    }
+  </style>
+</head>
+<body>
+    <div>
+      <canvas id='canvas1' width="900" height="500"></canvas>
+    </div>
+</body>
+
+<script>
+  var canvas1= document.getElementById('canvas1')
+  var ctx=canvas1.getContext('2d')
+  ctx.font='20px 微软雅黑'
+  ctx.fillStyle='pink'
+  ctx.textBaseline='middle'
+  ctx.fillText('吴世勋', 50,50)
+  ctx.font='30px 微软雅黑'
+  ctx.fillStyle='deeppink'
+  ctx.textBaseline='middle'
+  ctx.fillText('吴世勋', 150,50)
+  ctx.font='50px 微软雅黑'
+  ctx.fillStyle='red'
+  ctx.textBaseline='middle'
+  ctx.fillText('吴世勋', 300,50)
+  ctx.font='30px 微软雅黑'
+  ctx.fillStyle='deeppink'
+  ctx.textBaseline='middle'
+  ctx.fillText('吴世勋', 500,50)
+  ctx.font='20px 微软雅黑'
+  ctx.fillStyle='pink'
+  ctx.textBaseline='middle'
+  ctx.fillText('吴世勋', 650,50)
+
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>canvas练习4：银行logo</title>
+  <style>
+    #canvas1{
+      border: 1px solid red
+    }
+  </style>
+</head>
+<body>
+  <canvas id='canvas1' width="1000" height="700"></canvas>
+</body>
+<script>
+  var canvas1=document.getElementById('canvas1')
+  var ctx = canvas1.getContext('2d')
+  ctx.arc(100,100,70,0,2*Math.PI)
+  ctx.strokeStyle='red'
+  ctx.lineWidth=7
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(100,30)
+  ctx.lineTo(100,80)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(100,120)
+  ctx.lineTo(100,170)
+  ctx.stroke()
+  // ctx.strokeRect(80,90,40,20)
+  ctx.beginPath()
+  ctx.moveTo(75,80)
+  ctx.lineTo(120,80)
+  ctx.arcTo(130,80,130,90, 5)
+  ctx.lineTo(130,90)
+  ctx.lineTo(130,110)
+  ctx.arcTo(130,120,120,120,5)
+  ctx.lineTo(110,120)
+  ctx.lineTo(80,120)
+  ctx.arcTo(70,120,70,110,5)
+  ctx.lineTo(70,110)
+  ctx.lineTo(70,90)
+  ctx.arcTo(70,80,90,80,5)
+  ctx.stroke()
+  // ctx.moveTo()
+
+
+
+  ctx.beginPath()
+  ctx.arc(250,100,50,0,2*Math.PI)
+
+</script>
+</html>

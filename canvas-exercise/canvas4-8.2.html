@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>canvas练习三：绘制柱状图</title>
+  <style>
+    #canvas1{
+      border: 1px solid red
+    }
+  </style>
+</head>
+<body>
+  <canvas id='canvas1' width="900" height="500"></canvas>
+</body>
+<script>
+  var canvas1=document.getElementById('canvas1')
+  var ctx = canvas1.getContext('2d')
+  ctx.translate(50,450)
+  ctx.beginPath()
+  ctx.moveTo(0,0)
+  ctx.lineTo(730,0)
+  ctx.stroke()
+  ctx.font='14px 微软雅黑'
+  ctx.fillText('0',-20, 5)
+  //绘制水平方向上的箭头
+  ctx.beginPath()
+  ctx.moveTo(730, 0)
+  ctx.lineTo(720,-10)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(730, 0)
+  ctx.lineTo(720,10)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(100, 0)
+  ctx.lineTo(100,5)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(200, 0)
+  ctx.lineTo(200,5)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(300, 0)
+  ctx.lineTo(300,5)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(400, 0)
+  ctx.lineTo(400,5)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(500, 0)
+  ctx.lineTo(500,5)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(600, 0)
+  ctx.lineTo(600,5)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(700, 0)
+  ctx.lineTo(700,5)
+  ctx.stroke()
+  //绘制数字
+  ctx.font='14px 微软雅黑'
+  ctx.textAlign='center'
+  ctx.fillText('Mon',50,20)
+  ctx.fillText('Tue',150,20)
+  ctx.fillText('Wed',250,20)
+  ctx.fillText('Thu',350,20)
+  ctx.fillText('Fri',450,20)
+  ctx.fillText('Sat',550,20)
+  ctx.fillText('Sun',650,20)
+  ctx.font='14px 微软雅黑'
+  ctx.textBaseline='middle'
+  ctx.fillText('50', -20,-100)
+  ctx.fillText('100', -20,-200)
+  ctx.fillText('150', -20,-300)
+  ctx.fillText('200', -20,-400)
+  //绘制垂直方向上的箭头
+  ctx.beginPath()
+  ctx.moveTo(0,0)
+  ctx.lineTo(0,-420)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(0,-420)
+  ctx.lineTo(-10,-410)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(0,-420)
+  ctx.lineTo(10,-410)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(0,-100)
+  ctx.lineTo(-5,-100)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(0,-200)
+  ctx.lineTo(-5,-200)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(0,-300)
+  ctx.lineTo(-5,-300)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(0,-400)
+  ctx.lineTo(-5,-400)
+  ctx.stroke()
+  //绘制柱状图
+  ctx.fillStyle='rgb(195,54,50)'
+  ctx.fillRect(10,-250,80,250)
+  ctx.fillRect(110,-400,80, 400)
+  ctx.fillRect(210,-300,80, 300)
+  ctx.fillRect(310,-170,80, 170)
+  ctx.fillRect(410,-140,80, 140)
+  ctx.fillRect(510,-220,80, 220)
+  ctx.fillRect(610,-260,80, 260)
+
+
+
+
+</script>
+</html>
