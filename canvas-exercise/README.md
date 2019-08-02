@@ -251,8 +251,199 @@ createPattern()	在指定的方向上重复指定的元素
 createRadialGradient()	创建放射状/环形的渐变（用在画布内容上）   
 addColorStop()	规定渐变对象中的颜色和停止位置  
 
+	  ctx.fillStyle='red'         //设置填充矩形的颜色
+	  ctx.shadowBlur=50			  //设置阴影的模糊级别
+	  ctx.shadowColor='black'	  //设置阴影的颜色
+	  ctx.shadowOffsetX=100		  //设置阴影距离矩形的水平距离
+	  ctx.shadowOffsetY=10		  //设置阴影距离矩形的垂直距离
+	  ctx.fillRect(100,100,200,200)	 //绘制矩形 
 
+
+**gradient.addColorStop(stop,color);规定 gradient 对象中的颜色和位置。**   
+stop	介于 0.0 与 1.0 之间的值，表示渐变中开始与结束之间的位置。  
+color	在结束位置显示的 CSS 颜色值  
+*addColorStop() 方法与 createLinearGradient() 或 createRadialGradient() 一起使用。*
+
+
+**context.createLinearGradient(x0,y0,x1,y1);  创建线性的渐变对象**
+x0	渐变开始点的 x 坐标   
+y0	渐变开始点的 y 坐标  
+x1	渐变结束点的 x 坐标  
+y1	渐变结束点的 y 坐标   
+*可以配合使用addColorStop()方法指定渐变的颜色*
+   
+	var grd=ctx.createLinearGradient(0,0,170,0)   //创建线性的渐变对象
+	grd.addColorStop(0, "red");					  //指定渐变对象的位置颜色
+	grd.addColorStop(0.4, "yellow");			  
+	grd.addColorStop(0.7, "pink");				
+	grd.addColorStop(1, "white");
+	ctx.fillStyle=grd							 //设置形状的填充效果
+	ctx.fillRect(0,0,170,100)					 //创建有填充效果的矩形
+
+
+
+**context.createRadialGradient(x0,y0,r0,x1,y1,r1);  创建放射状/圆形渐变对象**    
+x0	渐变的开始圆的 x 坐标   
+y0	渐变的开始圆的 y 坐标   
+r0	开始圆的半径   
+x1	渐变的结束圆的 x 坐标   
+y1	渐变的结束圆的 y 坐标   
+r1	结束圆的半径      
+
+	var grd=ctx.createRadialGradient(100, 100, 10, 100, 100, 100)   //创建圆形渐变对象
+	grd.addColorStop(0, "red");           //指定渐变对象的位置颜色
+	grd.addColorStop(0.4, "yellow");
+	grd.addColorStop(1, "pink");
+	ctx.fillStyle=grd					  //把填充效果赋给形状
+	ctx.fillRect(0,0,200,200)			  //创建有以上填充效果的矩形  
+
+
+
+**context.createPattern(image,"repeat|repeat-x|repeat-y|no-repeat"); 方法在指定的方向内重复指定的元素**    
+image	规定要使用的图片、画布或视频元素。  
+repeat	默认。该模式在水平和垂直方向重复。   
+repeat-x	该模式只在水平方向重复。   
+repeat-y	该模式只在垂直方向重复。  
+no-repeat	该模式只显示一次（不重复）。  
+
+
+
+####转换    
+scale()	缩放当前绘图至更大或更小  
+rotate()	旋转当前绘图  
+translate()	重新映射画布上的 (0,0) 位置   
+transform()	替换绘图的当前转换矩阵   
+setTransform()	将当前转换重置为单位矩阵。然后运行 transform()
+   
+
+**context.scale(scalewidth,scaleheight);缩放当前绘图，更大或更小。**  
+scalewidth	缩放当前绘图的宽度 (1=100%, 0.5=50%, 2=200%, 依次类推)  
+scaleheight	缩放当前绘图的高度 (1=100%, 0.5=50%, 2=200%, etc.)
+
+*注释：如果您对绘图进行缩放，所有之后的绘图也会被缩放(包括形状之间的距离)。定位也会被缩放。如果您 scale(2,2)，那么绘图将定位于距离画布左上角两倍远的位置。而且！！！！缩放之后如果还需要缩放，那么该操作是基于上一个缩放操作的，即会在上一个操作的基础上进行缩放*        
+
+	ctx.strokeRect(0,0,100,100)       	//第一个矩形
+	ctx.strokeRect(10,0,100,100)		//第二个矩形
+	ctx.scale(2, 4)                   //将画布放大
+	ctx.strokeRect(10,0,100,100)      //放大之后再进行绘制，会发现，距离第一个矩形的距离是20，即意味着画布的放大缩小，伴随着图形之间的距离也有放大缩小相同的倍数  
+
+
+**context.rotate(angle);旋转当前的绘图。**    
+angle	         旋转角度，以弧度计。  
+如需将角度转换为弧度，请使用 degrees*Math.PI/180 公式进行计算。   
+举例：如需旋转 5 度，可规定下面的公式：5*Math.PI/180。  
+   
+
+	ctx.strokeRect(0, 0,100,100)
+	ctx.strokeRect(100,100,100,100)
+	ctx.strokeRect(200,200,100,100)
+	ctx.strokeRect(300,300,100,100)
+	ctx.rotate(20 * Math.PI / 180)   //设置旋转的度数
+	ctx.strokeRect(0, 0,100,100)
+	ctx.strokeRect(100,100,100,100)
+	ctx.strokeRect(200,200,100,100)
+	ctx.strokeRect(300,300,100,100)  //旋转的是整个画布  
+
+
+**context.translate(x,y);方法重新映射画布上的 (0,0) 位置。**      
+x	添加到水平坐标（x）上的值   
+y	添加到垂直坐标（y）上的值
+   
+	ctx.strokeRect(0,0,100,100)
+	ctx.translate(100,100)     //设置画布新的原点 该点就是画布的原点
+	ctx.strokeRect(0,0,100,100)  //以（100，,100）为原点进行绘制
+	ctx.strokeRect(10,10,100,100)
+  
+
+**context.transform(a,b,c,d,e,f);缩放、旋转、移动并倾斜当前的环境。**      
+a	水平缩放绘图   在水平方向上缩放绘图
+b	水平倾斜绘图   绘图在水平方向上的倾斜程度
+c	垂直倾斜绘图   绘图在垂直方向上的倾斜程度
+d	垂直缩放绘图   在垂直方向上缩放绘图
+e	水平移动绘图   绘图在水平方向上的移动
+f	垂直移动绘图   绘图在垂直方向上的移动
+
+*注释：该变换只会影响 transform() 方法调用之后的绘图。而且transform() 方法的行为相对于由 rotate(), scale(), translate(), or transform() 完成的其他变换。例如：如果您已经将绘图设置为放到两倍，则 transform() 方法会把绘图放大两倍，您的绘图最终将放大四倍。*
+   
+	  ctx.fillStyle = "yellow";
+	  ctx.fillRect(0, 0, 250, 100)             //绘制对比的形状
+	  ctx.transform(1, 0.5, -0.5, 1,100, 100);  //对绘图进行水平，垂直上不放大不缩小，水平上顺时针旋转0.5，垂直方向上逆时针旋转0.5，水平，垂直方向上各移动100px的距离
+	  ctx.fillStyle = "red";
+	  ctx.fillRect(0, 0, 250, 100);
+	  ctx.transform(1,0.5, -0.5, 1,100, 100); //在前一个变换矩阵上重新变换
+	  ctx.fillStyle = "pink";
+	  ctx.fillRect(0, 0, 250, 100);     
+
+
+**context.setTransform(a,b,c,d,e,f);画布上的每个对象都拥有一个当前的变换矩阵。**    
+*在使用了transform对对象进行旋转等操作之后，使用setTransform方法会重置并创建新的变换矩阵，再次绘制矩形，重置并创建新的变换矩阵*    
  
+a	水平缩放绘图   在水平方向上缩放绘图
+b	水平倾斜绘图   绘图在水平方向上的倾斜程度
+c	垂直倾斜绘图   绘图在垂直方向上的倾斜程度
+d	垂直缩放绘图   在垂直方向上缩放绘图
+e	水平移动绘图   绘图在水平方向上的移动
+f	垂直移动绘图   绘图在垂直方向上的移动
+     
+	  ctx.fillStyle = "yellow";                 
+	  ctx.fillRect(0, 0, 250, 100)				//绘制一个矩形作为参照
+	  ctx.transform(1, 0.5, -0.5, 1,100, 100);  //对画布进行旋转等转换
+	  ctx.fillStyle = "red";
+	  ctx.fillRect(0, 0, 250, 100);				//在进行转换之后的画布上绘制新的矩形
+	  ctx.setTransform(1, 0.5, -0.5, 1, 100, 100)  //重置并且对画布进行新的转换操作
+	  ctx.fillStyle = "pink";
+	  ctx.fillRect(0, 0, 250, 100);         	 //因为setTransform，粉色红色的矩形合并在一起  
+
+
+
+####图像绘制  
+drawImage()	    向画布上绘制图像、画布或视频    
+
+**context.drawImage(img,x,y,width,height);在画布上定位图像，并且指定其宽高**    
+img	规定要使用的图像、画布或视频。  
+x	在画布上放置图像的 x 坐标位置。  
+y	在画布上放置图像的 y 坐标位置。  
+width	可选。要使用的图像的宽度。（伸展或缩小图像）  
+height	可选。要使用的图像的高度。（伸展或缩小图像）
+
+
+
+**context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height); 剪切图像，并在画布上定位被剪切的部分：**    
+img	规定要使用的图像、画布或视频。  
+sx	可选。开始剪切的 x 坐标位置。  
+sy	可选。开始剪切的 y 坐标位置。  
+swidth	可选。被剪切图像的宽度。  
+sheight	可选。被剪切图像的高度。  
+x	在画布上放置图像的 x 坐标位置。  
+y	在画布上放置图像的 y 坐标位置。  
+width	可选。要使用的图像的宽度。（伸展或缩小图像）  
+height	可选。要使用的图像的高度。（伸展或缩小图像）  
+
+
+
+####像素操作     
+createImageData()	创建新的、空白的 ImageData 对象  
+getImageData()	返回 ImageData 对象，该对象为画布上指定的矩形复制像素数据    
+putImageData()	把图像数据（从指定的 ImageData 对象）放回画布上  
+
+width	返回 ImageData 对象的宽度  
+height	返回 ImageData 对象的高度   
+data	返回一个对象，其包含指定的 ImageData 对象的图像数据  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
 
 
 

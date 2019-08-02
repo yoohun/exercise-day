@@ -9,13 +9,14 @@
   <style>
     #div1{
       border: 1px solid red;
-      height: 1000px;
+      height: 900px;
       width: 100%;
       margin: auto
     }
     #canvasDiv{
       border: 1px solid;
-      margin: auto
+      margin: auto;
+      border:1px solid purple
     }
   </style>
 </head>
@@ -23,8 +24,12 @@
   <div id='div1'>
     <canvas id='canvasDiv' width="900px" height="900px"></canvas>
   </div>
+  <div style="display: none">
+    <img src="./aaaaa.png" alt="" id='aaa'>
+  </div>
 </body>
 <script>
+  var aaa=document.getElementById('aaa')
   var canvasDiv = document.getElementById('canvasDiv')
   var ctx = canvasDiv.getContext("2d")
   // ctx.fillStyle='red'
@@ -81,25 +86,25 @@
   // ctx.fillRect(0, 0, 150, 100) //绘制矩形
 
 
-  ctx.beginPath()
-  ctx.moveTo(20, 20)
-  ctx.quadraticCurveTo(100,90,400,20)
-  ctx.stroke();
+  // ctx.beginPath()
+  // ctx.moveTo(20, 20)
+  // ctx.quadraticCurveTo(100,90,400,20)
+  // ctx.stroke();
 
-  ctx.beginPath()
-  ctx.moveTo(100,100)
-  ctx.bezierCurveTo(120,200,180,200,240,100)
+  // ctx.beginPath()
+  // ctx.moveTo(100,100)
+  // ctx.bezierCurveTo(120,200,180,200,240,100)
   // ctx.closePath()
-  ctx.stroke()
+  // ctx.stroke()
 
 
-  ctx.beginPath()
-  ctx.moveTo(200,200)
+  // ctx.beginPath()
+  // ctx.moveTo(200,200)
   // ctx.arc(200,200,30,0,2*Math.PI)
   // ctx.arc(300,300,50,0,0.5*Math.PI)
   // ctx.arc(600,600,100,0,1*Math.PI)
-  ctx.arc(300,300,50,0,1.5*Math.PI)
-  ctx.stroke()
+  // ctx.arc(300,300,50,0,1.5*Math.PI)
+  // ctx.stroke()
 
 
 
@@ -117,23 +122,23 @@
 
 
 
-  ctx.beginPath()
-  ctx.moveTo(100,100)
-  ctx.lineTo(200,100)
-  ctx.arcTo(250,100,250,150,50)
-  ctx.lineTo(250,200)
-  ctx.stroke()
+  // ctx.beginPath()
+  // ctx.moveTo(100,100)
+  // ctx.lineTo(200,100)
+  // ctx.arcTo(250,100,250,150,50)
+  // ctx.lineTo(250,200)
+  // ctx.stroke()
 
 
 
-  ctx.beginPath()
-  ctx.moveTo(20, 20)
-  ctx.lineTo(100,20)
-  ctx.arcTo(150,20,150,70,50)
-  ctx.lineTo(150,120)
-  ctx.stroke()
-  console.log(ctx.isPointInPath(150,120));
-  console.log(ctx.isPointInPath(0,0));
+  // ctx.beginPath()
+  // ctx.moveTo(20, 20)
+  // ctx.lineTo(100,20)
+  // ctx.arcTo(150,20,150,70,50)
+  // ctx.lineTo(150,120)
+  // ctx.stroke()
+  // console.log(ctx.isPointInPath(150,120));
+  // console.log(ctx.isPointInPath(0,0));
 
 
   // ctx.beginPath()
@@ -175,12 +180,97 @@
 
 
 
-  ctx.font='40px 微软雅黑'
-  ctx.strokeStyle='blue'
-  ctx.fillStyle='red'
-  ctx.strokeText('吴世勋',100,400)
-  ctx.fillText('吴世勋',100,400)
-  console.log(ctx.measureText('吴世勋asasdas').width);
+  // ctx.font='40px 微软雅黑'
+  // ctx.strokeStyle='blue'
+  // ctx.fillStyle='red'
+  // ctx.strokeText('吴世勋',100,400)
+  // ctx.fillText('吴世勋',100,400)
+  // console.log(ctx.measureText('吴世勋asasdas').width);
+
+
+
+  // ctx.fillStyle='red'
+  // ctx.shadowBlur=50
+  // ctx.shadowColor='black'
+  // ctx.shadowOffsetX=100
+  // ctx.shadowOffsetY=10
+  // ctx.fillRect(100,100,200,200)
+
+// ctx.shadowBlur=20;
+// ctx.shadowColor="black";
+// ctx.fillStyle="blue";
+// ctx.fillRect(20,20,100,80);
+
+
+
+// var grd=ctx.createLinearGradient(0,0,170,0)
+// grd.addColorStop(0, "red");
+// grd.addColorStop(0.4, "yellow");
+// grd.addColorStop(0.7, "pink");
+// grd.addColorStop(1, "white");
+// ctx.fillStyle=grd
+// ctx.fillRect(0,0,170,100)
+
+
+// var grd=ctx.createRadialGradient(100, 100, 10, 100, 100, 100)
+// grd.addColorStop(0, "red");
+// grd.addColorStop(0.4, "yellow");
+// grd.addColorStop(1, "pink");
+// ctx.fillStyle=grd
+// ctx.fillRect(0,0,200,200)
+
+
+// var pat = ctx.createPattern(aaa, 'repeat');
+//   ctx.rect(0, 0, 150, 100);
+//   // ctx.fillStyle = pat;
+//   // ctx.fill();
+//   ctx.fill()
+
+
+// ctx.strokeRect(0,0,100,100)
+// ctx.strokeRect(10,0,100,100)
+// ctx.scale(2, 4)
+// ctx.strokeRect(10,0,100,100)
+
+
+// ctx.strokeRect(0, 0,100,100)
+// ctx.strokeRect(100,100,100,100)
+// ctx.strokeRect(200,200,100,100)
+// ctx.strokeRect(300,300,100,100)
+// ctx.rotate(20 * Math.PI / 180)
+// ctx.strokeRect(0, 0,100,100)
+// ctx.strokeRect(100,100,100,100)
+// ctx.strokeRect(200,200,100,100)
+// ctx.strokeRect(300,300,100,100)
+// ctx.rotate(20 * Math.PI / 180)
+// ctx.strokeRect(0, 0,100,100)
+// ctx.strokeRect(100,100,100,100)
+// ctx.strokeRect(200,200,100,100)
+// ctx.strokeRect(300,300,100,100)
+
+
+// ctx.strokeRect(0,0,100,100)
+// ctx.translate(100,100)
+// ctx.strokeRect(0,0,100,100)
+// ctx.strokeRect(10,10,100,100)
+
+
+
+  // ctx.fillStyle = "yellow";
+  // ctx.fillRect(0, 0, 250, 100)
+  // ctx.transform(1, 0.5, -0.5, 1,100, 100);
+  // ctx.fillStyle = "red";
+  // ctx.fillRect(0, 0, 250, 100);
+  // ctx.setTransform(1, 0.5, -0.5, 1, 100, 100)
+  // ctx.fillStyle = "pink";
+  // ctx.fillRect(0, 0, 250, 100);
+
+
+  ctx.drawImage(aaa, 10, 10, 240, 160);
+  // ctx.drawImage(aaa,30,30,100,100,0,0,10,10)
+
+
+
 
 
 
