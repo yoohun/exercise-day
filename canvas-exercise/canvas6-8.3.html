@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>canvas练习5：sin函数图</title>
+  <style>
+    #canvas1{
+      border: 1px solid red
+    }
+  </style>
+</head>
+<body>
+  <canvas id='canvas1' width="1000" height="900"></canvas>
+</body>
+
+<script>
+  var canvas1=document.getElementById('canvas1')
+  var ctx=canvas1.getContext('2d')
+  ctx.font='18px 微软雅黑'
+  ctx.textAlign='center'
+  ctx.textBaseline='middle'
+  ctx.translate(150,420)
+  ctx.moveTo(-20,0)
+  ctx.lineTo(600,0)
+  ctx.moveTo(0,-400)
+  ctx.lineTo(0,400)
+  ctx.moveTo(0,-400)
+  ctx.lineTo(-10,-390)
+  ctx.moveTo(0,-400)
+  ctx.lineTo(10,-390)
+  ctx.moveTo(600,0)
+  ctx.lineTo(590,-10)
+  ctx.moveTo(600,0)
+  ctx.lineTo(590,10)
+  ctx.moveTo(280,0)
+  ctx.lineTo(280,10)
+  ctx.moveTo(560,0)
+  ctx.lineTo(560,10)
+  ctx.moveTo(0,-264)
+  ctx.lineTo(-10,-264)
+  ctx.moveTo(0,264)
+  ctx.lineTo(-10,264)
+  ctx.stroke()
+  ctx.fillStyle='black'
+  ctx.fillText('0',-20,25)
+  ctx.fillText('π', Math.PI * 100,25)
+  ctx.fillText('2π', Math.PI * 200,25)
+  ctx.fillText('-1',-20,264)
+  ctx.fillText('1',-20,-264)
+  ctx.beginPath()
+  ctx.moveTo(0,0)
+  for(var ang=0;ang<2*Math.PI+1;ang+=0.1){
+    ctx.lineTo(ang*100, -Math.sin(ang)*100)
+  }
+
+  // ctx.bezierCurveTo(Math.PI * 1/4,-y, Math.PI * 1/4*3,-y,280,0)
+  // ctx.bezierCurveTo()
+  // ctx.lineTo(Math.PI*100,1)
+  ctx.stroke()
+  // ctx.beginPath()
+  // ctx.moveTo(280, 0)
+  // ctx.bezierCurveTo(350,350,490,350,560,0)
+  // ctx.stroke()
+</script>
+
+</html>

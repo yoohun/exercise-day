@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>canvas练习4：银行logo</title>
+  <style>
+    #canvas1{
+      border: 1px solid red
+    }
+  </style>
+</head>
+<body>
+  <canvas id='canvas1' width="1000" height="700"></canvas>
+</body>
+<script>
+  var canvas1=document.getElementById('canvas1')
+  var ctx = canvas1.getContext('2d')
+  ctx.font='30px 微软雅黑'
+  ctx.textAlign='center'
+  ctx.textBaseline='middle'
+  ctx.arc(100,100,70,0,2*Math.PI)
+  ctx.strokeStyle='red'
+  ctx.lineWidth=7
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(100,30)
+  ctx.lineTo(100,80)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(100,120)
+  ctx.lineTo(100,170)
+  ctx.stroke()
+  // ctx.strokeRect(80,90,40,20)
+  ctx.beginPath()
+  ctx.moveTo(75,80)
+  ctx.lineTo(120,80)
+  ctx.arcTo(130,80,130,90, 5)
+  ctx.lineTo(130,90)
+  ctx.lineTo(130,110)
+  ctx.arcTo(130,120,120,120,5)
+  ctx.lineTo(110,120)
+  ctx.lineTo(80,120)
+  ctx.arcTo(70,120,70,110,5)
+  ctx.lineTo(70,110)
+  ctx.lineTo(70,90)
+  ctx.arcTo(70,80,90,80,5)
+  ctx.stroke()
+  // ctx.moveTo()
+  ctx.fillStyle='black'
+  ctx.fillText('中国银行', 100,200)
+
+
+
+  ctx.beginPath()
+  ctx.arc(270,100,70,0,2*Math.PI)
+  ctx.fillStyle='red'
+  ctx.fill()
+  ctx.fillStyle='white'
+  ctx.fillRect(245,75,50,50)
+  ctx.beginPath()
+  ctx.strokeStyle='white'
+  ctx.lineWidth=7
+  ctx.moveTo(245, 30)
+  ctx.lineTo(245, 125)
+  ctx.moveTo(245,75)
+  ctx.lineTo(340,75)
+  ctx.moveTo(295,75)
+  ctx.lineTo(295,170)
+  ctx.moveTo(295,125)
+  ctx.lineTo(200,125)
+  ctx.stroke()
+  ctx.fillStyle='black'
+  ctx.fillText('重庆市商业银行',270,200)
+
+
+
+  ctx.beginPath()
+  ctx.strokeStyle='blue'
+  ctx.lineWidth=5
+  ctx.arc(480, 100, 50, 0, 2 * Math.PI)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.strokeStyle='blue'
+  ctx.arc(420,100,50,0,2*Math.PI)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.strokeStyle='white'
+  ctx.lineWidth=7
+  ctx.arc(480, 100, 50, 0.9 * Math.PI , 1.3 * Math.PI)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.arc(420, 100, 50, 1.9 * Math.PI , 2.3 * Math.PI)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.strokeStyle='blue'
+  ctx.lineWidth=5
+  ctx.arc(480, 100, 50, 0.5 * Math.PI , 0.9 * Math.PI)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.arc(420, 100, 50, 1 * Math.PI , 1.9 * Math.PI)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.strokeRect(405,85,30,30)
+  ctx.strokeRect(465,85,30,30)
+  ctx.stroke()
+
+
+
+  ctx.beginPath()
+  ctx.arc(630,100,70,0,2*Math.PI)
+  ctx.fillStyle='red'
+  ctx.fill()
+  ctx.fillStyle='white'
+  ctx.fillRect(600,70,60,60)
+  ctx.strokeStyle='white'
+  ctx.beginPath()
+  ctx.moveTo(660,80)
+  ctx.lineTo(700,80)
+  ctx.lineTo(700,110)
+  ctx.lineTo(660,90)
+  ctx.closePath()
+  ctx.fill()
+  ctx.beginPath()
+  ctx.moveTo(560,120)
+  ctx.lineTo(600,120)
+  ctx.lineTo(600,110)
+  ctx.lineTo(560,90)
+  ctx.fill()
+
+
+
+  ctx.beginPath()
+  ctx.arc(810,100,70,0,2*Math.PI)
+  ctx.strokeStyle='red'
+  ctx.lineWidth=7
+  ctx.stroke()
+  ctx.fillStyle='red'
+  ctx.fillRect(795,90,30,20)
+  ctx.lineWidth=10
+  ctx.strokeRect(770,65,80,25)
+  ctx.strokeRect(770,110,80,25)
+  ctx.beginPath()
+  ctx.strokeStyle='white'
+  ctx.lineWidth=4
+  ctx.moveTo(810,60)
+  ctx.lineTo(810,160)
+  ctx.stroke()
+  ctx.fillStyle='black'
+  ctx.fillText('中国工商银行',810,200)
+
+  ctx.beginPath()
+  ctx.lineWidth=12
+  ctx.arc(100,300,70,0,2*Math.PI)
+  ctx.strokeStyle='red'
+  ctx.stroke()
+  ctx.fillStyle='red'
+  ctx.fillRect(80,285,40,30)
+  ctx.beginPath()
+  ctx.arc(-30,300,90, 1.82 * Math.PI,2.18*Math.PI)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.arc(230,300,90, 0.82 * Math.PI,1.18*Math.PI)
+  ctx.moveTo(55,268)
+  ctx.lineTo(145, 268)
+  ctx.moveTo(55,332)
+  ctx.lineTo(145, 332)
+  ctx.stroke()
+  ctx.fillStyle='black'
+  ctx.fillText('丹东银行',270,200)
+
+
+  ctx.beginPath()
+  ctx.arc(300, 300, 70, 0, 2 * Math.PI)
+  ctx.fillStyle='red'
+  ctx.fill()
+  ctx.beginPath()
+  ctx.arc(280,270,50,0,2*Math.PI)
+  ctx.fillStyle='white'
+  ctx.fill()
+  ctx.beginPath()
+  ctx.fillStyle='red'
+  ctx.arc(290,250,40,0,2*Math.PI)
+  ctx.fill()
+  ctx.fillStyle='black'
+  ctx.fillText('吉林银行',270,200)
+
+  // ctx.beginPath()
+  // ctx.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
